@@ -1,4 +1,4 @@
-package org.muskan;
+package org.example;
 
 public class Quack implements QuackBehavior{
     public void quack(){

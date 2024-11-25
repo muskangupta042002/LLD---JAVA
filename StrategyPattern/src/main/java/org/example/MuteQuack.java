@@ -1,4 +1,4 @@
-package org.muskan;
+package org.example;
 
 public class MuteQuack implements QuackBehavior{
     public void quack(){

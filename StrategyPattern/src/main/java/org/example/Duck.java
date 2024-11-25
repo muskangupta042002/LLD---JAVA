@@ -1,4 +1,4 @@
-package org.muskan;
+package org.example;
 
 public abstract class Duck {
     FlyBehavior flyBehavior;

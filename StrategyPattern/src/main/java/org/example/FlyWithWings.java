@@ -1,4 +1,4 @@
-package org.muskan;
+package org.example;
 
 public class FlyWithWings implements FlyBehavior{
     @Override
@@ -6,3 +6,4 @@ public class FlyWithWings implements FlyBehavior{
         System.out.println("I am Flying");
     }
 }
+

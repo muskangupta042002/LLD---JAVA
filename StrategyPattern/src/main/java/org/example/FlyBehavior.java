@@ -1,4 +1,4 @@
-package org.muskan;
+package org.example;
 
 public interface FlyBehavior {
     public void fly();
