@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/Factory Design Pattern/pom.xml" />
         <option value="$PROJECT_DIR$/StrategyPattern/pom.xml" />
+        <option value="$PROJECT_DIR$/ObserverPattern/pom.xml" />
+        <option value="$PROJECT_DIR$/DecoratorPattern/pom.xml" />
       </list>
     </option>
   </component>

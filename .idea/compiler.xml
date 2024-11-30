@@ -7,7 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="factory" />
+        <module name="ObserverPattern" />
         <module name="StrategyPattern" />
+        <module name="DecoratorPattern" />
       </profile>
     </annotationProcessing>
   </component>
