@@ -9,3 +9,9 @@ Notes:
 - Program to interfaces, not implementations
 
 For setting Behavior dynamically we can use setter method for that Behavior
+
+
+**Factory Method Pattern**
+--------------------------
+All factory Patterns encapsulate object creation. The Factory Method Pattern encapsulates object
+creation by letting subclasses decide what object to create.

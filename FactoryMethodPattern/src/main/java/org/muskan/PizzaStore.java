@@ -1,7 +1,6 @@
 package org.muskan;
 
 public abstract class PizzaStore {
-    Pizza pizza;
     public final Pizza orderPizza(String type){
         Pizza pizza;
         pizza = createPizza(type);

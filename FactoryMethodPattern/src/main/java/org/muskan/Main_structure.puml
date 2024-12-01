@@ -1,0 +1,263 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "org.muskan.Main",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1062805971 { 
+   	label=muskan
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   ChicagoStyleCheesePizza1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ChicagoStyleCheesePizza</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># cut()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ChicagoStyleClamPizza1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ChicagoStyleClamPizza</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># cut()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ChicagoStylePepperoniPizza1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ChicagoStylePepperoniPizza</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># cut()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ChicagoStylePizzaStore1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ChicagoStylePizzaStore</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># createPizza(item: String): Pizza</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ChicagoStyleVeggiePizza1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ChicagoStyleVeggiePizza</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># cut()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Main1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Main</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+NYStyleCheesePizza1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)NYStyleCheesePizza</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+NYStyleClamPizza1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)NYStyleClamPizza</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+NYStylePepperoniPizza1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)NYStylePepperoniPizza</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+NYStylePizzaStore1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)NYStylePizzaStore</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># createPizza(item: String): Pizza</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+NYStyleVeggiePizza1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)NYStyleVeggiePizza</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Pizza1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Pizza</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   dough: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   sauce: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   toppings: List&lt;String&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># bake()</TD></TR>
+<TR><TD ALIGN="LEFT" ># box()</TD></TR>
+<TR><TD ALIGN="LEFT" ># cut()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ prepare()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PizzaStore1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PizzaStore</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># createPizza(type: String): Pizza</TD></TR>
+<TR><TD ALIGN="LEFT" >+ orderPizza(type: String): Pizza</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Pizza1045385 -> ChicagoStyleCheesePizza1045385[arrowhead=none, arrowtail=empty, dir=both];
+Pizza1045385 -> ChicagoStyleClamPizza1045385[arrowhead=none, arrowtail=empty, dir=both];
+Pizza1045385 -> ChicagoStylePepperoniPizza1045385[arrowhead=none, arrowtail=empty, dir=both];
+Pizza1045385 -> ChicagoStyleVeggiePizza1045385[arrowhead=none, arrowtail=empty, dir=both];
+Pizza1045385 -> NYStyleCheesePizza1045385[arrowhead=none, arrowtail=empty, dir=both];
+Pizza1045385 -> NYStyleClamPizza1045385[arrowhead=none, arrowtail=empty, dir=both];
+Pizza1045385 -> NYStylePepperoniPizza1045385[arrowhead=none, arrowtail=empty, dir=both];
+Pizza1045385 -> NYStyleVeggiePizza1045385[arrowhead=none, arrowtail=empty, dir=both];
+PizzaStore1045385 -> ChicagoStylePizzaStore1045385[arrowhead=none, arrowtail=empty, dir=both];
+PizzaStore1045385 -> NYStylePizzaStore1045385[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

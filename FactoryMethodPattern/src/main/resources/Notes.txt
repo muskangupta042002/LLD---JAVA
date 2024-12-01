@@ -1,0 +1,2 @@
+All factory Patterns encapsulate object creation. The Factory Method Pattern encapsulates object
+creation by letting subclasses decide what object to create.
