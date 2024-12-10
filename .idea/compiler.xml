@@ -10,6 +10,7 @@
         <module name="FactoryMethodPattern" />
         <module name="ObserverPattern" />
         <module name="StrategyPattern" />
+        <module name="Singleton" />
         <module name="DecoratorPattern" />
       </profile>
     </annotationProcessing>

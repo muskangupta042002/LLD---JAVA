@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/ObserverPattern/pom.xml" />
         <option value="$PROJECT_DIR$/DecoratorPattern/pom.xml" />
         <option value="$PROJECT_DIR$/FactoryMethodPattern/pom.xml" />
+        <option value="$PROJECT_DIR$/Singleton/pom.xml" />
       </list>
     </option>
   </component>
