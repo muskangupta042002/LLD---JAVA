@@ -9,6 +9,7 @@
         <module name="factory" />
         <module name="FactoryMethodPattern" />
         <module name="ObserverPattern" />
+        <module name="CommandPatttern" />
         <module name="StrategyPattern" />
         <module name="Singleton" />
         <module name="DecoratorPattern" />
