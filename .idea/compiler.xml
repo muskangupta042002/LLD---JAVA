@@ -10,9 +10,11 @@
         <module name="FactoryMethodPattern" />
         <module name="ObserverPattern" />
         <module name="CommandPatttern" />
+        <module name="Facade" />
         <module name="StrategyPattern" />
         <module name="Singleton" />
         <module name="DecoratorPattern" />
+        <module name="AdapterPattern" />
       </profile>
     </annotationProcessing>
   </component>

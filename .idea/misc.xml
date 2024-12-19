@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/Singleton/pom.xml" />
         <option value="$PROJECT_DIR$/CommandPatttern/pom.xml" />
         <option value="$PROJECT_DIR$/AdapterPattern/pom.xml" />
+        <option value="$PROJECT_DIR$/Facade/pom.xml" />
       </list>
     </option>
   </component>
