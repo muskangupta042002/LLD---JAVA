@@ -14,6 +14,7 @@
         <module name="StrategyPattern" />
         <module name="Singleton" />
         <module name="DecoratorPattern" />
+        <module name="TemplateMethodPattern" />
         <module name="AdapterPattern" />
       </profile>
     </annotationProcessing>

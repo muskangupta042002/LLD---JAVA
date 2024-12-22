@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/CommandPatttern/pom.xml" />
         <option value="$PROJECT_DIR$/AdapterPattern/pom.xml" />
         <option value="$PROJECT_DIR$/Facade/pom.xml" />
+        <option value="$PROJECT_DIR$/TemplateMethodPattern/pom.xml" />
       </list>
     </option>
   </component>
