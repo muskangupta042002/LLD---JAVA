@@ -13,6 +13,7 @@
         <module name="Facade" />
         <module name="CarRentalSystem" />
         <module name="StrategyPattern" />
+        <module name="LoggingFrameworkDesign" />
         <module name="Singleton" />
         <module name="DecoratorPattern" />
         <module name="TemplateMethodPattern" />

@@ -173,6 +173,37 @@ subgraph cluster_1610969735 {
 ];
 } 
 
+subgraph cluster_1635605691 { 
+   	label=payment
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   CreditCardPayment1400510577[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CreditCardPayment</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ processPayment(amount: double): PaymentStatus</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UPIPayment1400510577[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UPIPayment</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ processPayment(amount: double): PaymentStatus</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
 subgraph cluster_1723026360 { 
    	label=reservations
 	labeljust=l
@@ -228,14 +259,11 @@ subgraph cluster_832358143 {
 	fillcolor="#d8d8d8"
 	style=filled
    
-   AdditionalServices469627915[
+   EmailNotificationService469627915[
 	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
-<TR><TD ALIGN="LEFT" >(C)AdditionalServices</TD></TR>
+<TR><TD ALIGN="LEFT" >(C)EmailNotificationService</TD></TR>
 <HR/>
-<TR><TD ALIGN="LEFT" >+ addAdditionalDriver(reservation: VehicleReservation)</TD></TR>
-<TR><TD ALIGN="LEFT" >+ addInsurance(reservation: VehicleReservation)</TD></TR>
-<TR><TD ALIGN="LEFT" >+ addRoadsideAssistance(reservation: VehicleReservation)</TD></TR>
-<TR><TD ALIGN="LEFT" >+ addWifi(reservation: VehicleReservation)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(reservation: VehicleReservation)</TD></TR>
 </TABLE>>
 	style=filled
 	margin=0
@@ -243,25 +271,14 @@ subgraph cluster_832358143 {
 	fillcolor="#FFFFFF"
 ];
 
-NotificationService469627915[
+NotificationManager469627915[
 	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
-<TR><TD ALIGN="LEFT" >(C)NotificationService</TD></TR>
+<TR><TD ALIGN="LEFT" >(C)NotificationManager</TD></TR>
 <HR/>
-<TR><TD ALIGN="LEFT" >-   timer: Timer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   observers: List&lt;Observer&gt; [0..*]</TD></TR>
 <HR/>
-<TR><TD ALIGN="LEFT" >+ sendLateReturnRemainder(reservation: VehicleReservation)</TD></TR>
-</TABLE>>
-	style=filled
-	margin=0
-	shape=plaintext
-	fillcolor="#FFFFFF"
-];
-
-PaymentService469627915[
-	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
-<TR><TD ALIGN="LEFT" >(C)PaymentService</TD></TR>
-<HR/>
-<TR><TD ALIGN="LEFT" >+ processPayment(reservation: VehicleReservation, isPaid: boolean): PaymentStatus</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addObserver(observer: Observer)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ notifyObservers(reservation: VehicleReservation)</TD></TR>
 </TABLE>>
 	style=filled
 	margin=0
@@ -284,15 +301,30 @@ ReservationManager469627915[
 	shape=plaintext
 	fillcolor="#FFFFFF"
 ];
+
+SMSNotificationService469627915[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SMSNotificationService</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ update(reservation: VehicleReservation)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
 } 
 } 
 
 'edges    
 Member308983677 -> VehicleReservation1559924286[label="reservations
 [0..*]"];
-RentalServiceDriver1045385 -> NotificationService469627915[label="main() -> sendLateReturnRemainder()"];
-RentalServiceDriver1045385 -> PaymentService469627915[label="main() -> processPayment()"];
+NotificationManager469627915 -> EmailNotificationService469627915[arrowhead=none];
+NotificationManager469627915 -> SMSNotificationService469627915[arrowhead=none];
+RentalServiceDriver1045385 -> CreditCardPayment1400510577[arrowhead=none];
 RentalServiceDriver1045385 -> ReservationManager469627915[label="main() -> bookVehicle()"];
+RentalServiceDriver1045385 -> UPIPayment1400510577[arrowhead=none];
+RentalServiceDriver1045385 -> Vehicle165368414[label="main() -> calculateRentalPrice()"];
 ReservationManager469627915 -> Member308983677[label="bookVehicle() -> addReservation()"];
 ReservationManager469627915 -> VehicleReservation1559924286[label="reservations
 [0..*]"];
