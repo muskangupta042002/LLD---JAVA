@@ -9,15 +9,16 @@
         <module name="factory" />
         <module name="FactoryMethodPattern" />
         <module name="ObserverPattern" />
-        <module name="CommandPatttern" />
         <module name="Facade" />
+        <module name="LoggingFrameworkDesign" />
+        <module name="DecoratorPattern" />
+        <module name="CommandPatttern" />
         <module name="CarRentalSystem" />
         <module name="StrategyPattern" />
-        <module name="LoggingFrameworkDesign" />
         <module name="Singleton" />
-        <module name="DecoratorPattern" />
         <module name="TemplateMethodPattern" />
         <module name="AdapterPattern" />
+        <module name="ChainOfResponsibility" />
       </profile>
     </annotationProcessing>
   </component>
