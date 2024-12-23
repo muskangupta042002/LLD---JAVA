@@ -11,6 +11,7 @@
         <module name="ObserverPattern" />
         <module name="CommandPatttern" />
         <module name="Facade" />
+        <module name="CarRentalSystem" />
         <module name="StrategyPattern" />
         <module name="Singleton" />
         <module name="DecoratorPattern" />

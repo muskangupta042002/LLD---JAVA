@@ -1,0 +1,311 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "org.muskan.RentalServiceDriver",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1062805971 { 
+   	label=muskan
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   RentalServiceDriver1045385[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)RentalServiceDriver</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+subgraph cluster_1467354472 { 
+   	label=vehicles
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   Car165368414[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Car</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateRentalPrice(): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Truck165368414[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Truck</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateRentalPrice(): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Vehicle165368414[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Vehicle</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   model: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   type: VehicleType [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   vehicleNumber: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateRentalPrice(): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1610969735 { 
+   	label=accounts
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   Member308983677[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Member</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   email: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   memberId: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reservations: List&lt;VehicleReservation&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addReservation(reservation: VehicleReservation)</TD></TR>
+<TR><TD ALIGN="LEFT" ># canEqual(other: Object): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1723026360 { 
+   	label=reservations
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   VehicleReservation1559924286[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)VehicleReservation</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   dueDate: Date [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   member: Member [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reservationDate: Date [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reservationId: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   vehicle: Vehicle [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># canEqual(other: Object): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_728846473 { 
+   	label=search
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   VehicleInventory1429166847[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)VehicleInventory</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   inventoryByModel: Map&lt;String, List&lt;Vehicle&gt;&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   inventoryByType: Map&lt;VehicleType, List&lt;Vehicle&gt;&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addVehicle(vehicle: Vehicle)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ serachByModel(model: String): List&lt;Vehicle&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ serachByType(type: VehicleType): List&lt;Vehicle&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_832358143 { 
+   	label=services
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   AdditionalServices469627915[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AdditionalServices</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addAdditionalDriver(reservation: VehicleReservation)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addInsurance(reservation: VehicleReservation)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addRoadsideAssistance(reservation: VehicleReservation)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addWifi(reservation: VehicleReservation)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+NotificationService469627915[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)NotificationService</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   timer: Timer [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ sendLateReturnRemainder(reservation: VehicleReservation)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PaymentService469627915[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PaymentService</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ processPayment(reservation: VehicleReservation, isPaid: boolean): PaymentStatus</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ReservationManager469627915[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ReservationManager</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   reservations: List&lt;VehicleReservation&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ bookVehicle(member: Member, vehicle: Vehicle, dueDate: Date): VehicleReservation</TD></TR>
+<TR><TD ALIGN="LEFT" >+ cancelReservation(reservationId: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ returnVehicle(reservationId: int): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+Member308983677 -> VehicleReservation1559924286[label="reservations
+[0..*]"];
+RentalServiceDriver1045385 -> NotificationService469627915[label="main() -> sendLateReturnRemainder()"];
+RentalServiceDriver1045385 -> PaymentService469627915[label="main() -> processPayment()"];
+RentalServiceDriver1045385 -> ReservationManager469627915[label="main() -> bookVehicle()"];
+ReservationManager469627915 -> Member308983677[label="bookVehicle() -> addReservation()"];
+ReservationManager469627915 -> VehicleReservation1559924286[label="reservations
+[0..*]"];
+Vehicle165368414 -> Car165368414[arrowhead=none, arrowtail=empty, dir=both];
+Vehicle165368414 -> Truck165368414[arrowhead=none, arrowtail=empty, dir=both];
+VehicleInventory1429166847 -> Vehicle165368414[label="inventoryByModel
+[0..*]"];
+VehicleInventory1429166847 -> Vehicle165368414[label="inventoryByType
+[0..*]"];
+VehicleReservation1559924286 -> Member308983677[label="member
+[0..1]"];
+VehicleReservation1559924286 -> Vehicle165368414[label="vehicle
+[0..1]"];
+    
+}
+@enduml
