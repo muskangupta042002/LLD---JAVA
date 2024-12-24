@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/TemplateMethodPattern/pom.xml" />
         <option value="$PROJECT_DIR$/CarRentalSystem/pom.xml" />
         <option value="$PROJECT_DIR$/LoggingFrameworkDesign/pom.xml" />
+        <option value="$PROJECT_DIR$/ChainOfResponsibility/pom.xml" />
       </list>
     </option>
   </component>
