@@ -9,19 +9,11 @@ import java.util.List;
 
 @Getter
 public class Booking {
-    @NonNull
+
     private final String id;
-
-    @NonNull
     private final Show show;
-
-    @NonNull
     private final List<Seat> seats;
-
-    @NonNull
     private final String user;
-
-    @NonNull
     private BookingStatus bookingStatus;
 
     public Booking(@NonNull String id, @NonNull Show show, @NonNull List<Seat> seats, @NonNull String user) {
@@ -29,7 +21,7 @@ public class Booking {
         this.show = show;
         this.seats = seats;
         this.user = user;
-        this.bookingStatus = BookingStatus.CREATED;
+        this.bookingStatus = BookingStatus.CREATED; //mutability
     }
 
     public boolean isConfirmed() {
