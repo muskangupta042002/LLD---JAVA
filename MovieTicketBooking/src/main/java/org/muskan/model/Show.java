@@ -1,10 +1,12 @@
 package org.muskan.model;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.Date;
 
-@Data
+@AllArgsConstructor
+@Getter
 public class Show {
     //show runs for a movie
     private final String id;

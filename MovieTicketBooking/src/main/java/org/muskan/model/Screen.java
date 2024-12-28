@@ -9,8 +9,8 @@ import java.util.List;
 
 @Getter
 public class Screen {
-    private final@NonNull String id;
-    private final@NonNull String name;
+    private final String id;
+    private final String name;
     private final Theatre theatre;
     private final List<Seat> seat;
 

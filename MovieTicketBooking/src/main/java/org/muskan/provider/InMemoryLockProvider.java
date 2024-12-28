@@ -24,7 +24,7 @@ public class InMemoryLockProvider implements LockProviders{
     synchronized public void lockSeats(@NonNull final Show show, @NonNull final List<Seat> seats, @NonNull final String userId) {
         for(Seat seat: seats){
             if(isSeatLocked(show, seat)){
-                throw  new SeatTemporaryUnavailableException();
+                throw new SeatTemporaryUnavailableException();
             }
         }
 
@@ -51,7 +51,7 @@ public class InMemoryLockProvider implements LockProviders{
 
     @Override
     public boolean validateLock(@NonNull final Show show, @NonNull final Seat seat, @NonNull final String userId) {
-        return isSeatLocked(show, seat) && locks.get(show).get(show).getLockedBy().equals(userId);
+        return isSeatLocked(show, seat) && locks.get(show).get(seat).getLockedBy().equals(userId);
     }
 
     @Override

@@ -18,7 +18,7 @@ public class Theatre {
         this.screens=new ArrayList<>();
     }
 
-    public void addScreen(Screen screen){
+    public void addScreen(@NonNull final Screen screen){
         this.screens.add(screen);
     }
 }

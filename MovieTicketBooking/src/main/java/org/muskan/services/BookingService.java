@@ -51,6 +51,7 @@ public class BookingService {
         seatLockProvider.lockSeats(show, seats, userId);
         final String bookingId = UUID.randomUUID().toString();
         final Booking newBooking = new Booking(bookingId, show, seats, userId);
+        showBookings.put(bookingId, newBooking);
         return newBooking;
     }
 
