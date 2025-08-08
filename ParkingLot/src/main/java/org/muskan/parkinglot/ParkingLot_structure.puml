@@ -1,0 +1,302 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "org.muskan.parkinglot.ParkingLot",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1062805971 { 
+   	label=muskan
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_900708614 { 
+   	label=parkinglot
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   BestFitStrategy1063604229[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BestFitStrategy</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ findSpot(floors: List&lt;ParkingFloor&gt;, vehicle: Vehicle): Optional&lt;ParkingSpot&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Bike1169970606[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Bike</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Car1169970606[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Car</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FarthestFitStrategy1063604229[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FarthestFitStrategy</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ findSpot(floors: List&lt;ParkingFloor&gt;, vehicle: Vehicle): Optional&lt;ParkingSpot&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FlatRateFeeStrategy762978633[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FlatRateFeeStrategy</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateFee(ticket: ParkingTicket): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+NearestFirstStrategy1063604229[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)NearestFirstStrategy</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ findSpot(floors: List&lt;ParkingFloor&gt;, vehicle: Vehicle): Optional&lt;ParkingSpot&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ParkingFloor2087997823[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ParkingFloor</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   floorNumber: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   parkingSpots: Map&lt;String, ParkingSpot&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addSpot(spot: ParkingSpot)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ displayAvailability()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ findAvailableSpot(vehicle: Vehicle): Optional&lt;ParkingSpot&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ParkingLot2021140080[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ParkingLot</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   activeTickets: Map&lt;String, ParkingTicket&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   feeStrategy: FeeStrategy [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   floors: List&lt;ParkingFloor&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   parkingStrategy: ParkingStrategy [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addFloor(floor: ParkingFloor)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ parkVehicle(vehicle: Vehicle): Optional&lt;ParkingTicket&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ unparkVehicle(license: String): Optional&lt;Double&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ParkingSpot2087997823[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ParkingSpot</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   isOccupied: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   spotId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   spotSize: VehicleSize [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   vehicle: Vehicle [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ canFitVehicle(vehicle: Vehicle): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ parkVehicle(vehicle: Vehicle)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ unParkVehicle()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ParkingTicket2087997823[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ParkingTicket</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   entryTimeStamp: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   exitTimeStamp: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   spot: ParkingSpot [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   ticketId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   vehicle: Vehicle [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Truck1169970606[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Truck</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Vehicle1169970606[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Vehicle</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   licensePlate: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   size: VehicleSize [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+VehicleBasedFeeStrategy762978633[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)VehicleBasedFeeStrategy</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   hourlyRates: Map&lt;VehicleType, Double&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateFee(ticket: ParkingTicket): double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+BestFitStrategy1063604229 -> ParkingFloor2087997823[label="findSpot() -> findAvailableSpot()"];
+FarthestFitStrategy1063604229 -> ParkingFloor2087997823[label="findSpot() -> findAvailableSpot()"];
+NearestFirstStrategy1063604229 -> ParkingFloor2087997823[label="findSpot() -> findAvailableSpot()"];
+ParkingFloor2087997823 -> ParkingSpot2087997823[label="parkingSpots
+[0..*]"];
+ParkingLot2021140080 -> BestFitStrategy1063604229[arrowhead=none];
+ParkingLot2021140080 -> FarthestFitStrategy1063604229[arrowhead=none];
+ParkingLot2021140080 -> FlatRateFeeStrategy762978633[arrowhead=none];
+ParkingLot2021140080 -> NearestFirstStrategy1063604229[arrowhead=none];
+ParkingLot2021140080 -> ParkingFloor2087997823[label="floors
+[0..*]"];
+ParkingLot2021140080 -> ParkingTicket2087997823[label="activeTickets
+[0..*]"];
+ParkingLot2021140080 -> VehicleBasedFeeStrategy762978633[arrowhead=none];
+ParkingSpot2087997823 -> Vehicle1169970606[label="vehicle
+[0..1]"];
+ParkingTicket2087997823 -> ParkingSpot2087997823[label="spot
+[0..1]"];
+ParkingTicket2087997823 -> Vehicle1169970606[label="vehicle
+[0..1]"];
+Vehicle1169970606 -> Bike1169970606[arrowhead=none, arrowtail=empty, dir=both];
+Vehicle1169970606 -> Car1169970606[arrowhead=none, arrowtail=empty, dir=both];
+Vehicle1169970606 -> Truck1169970606[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

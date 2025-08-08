@@ -1,6 +1,6 @@
-package org.muskan.parkinglot.fee;
+package org.muskan.parkinglot.strategy.fee;
 
-import org.muskan.parkinglot.ParkingTicket;
+import org.muskan.parkinglot.entities.ParkingTicket;
 
 public class FlatRateFeeStrategy implements FeeStrategy {
     private static final double RATE_PER_HOUR = 10.0; // Flat rate per hour

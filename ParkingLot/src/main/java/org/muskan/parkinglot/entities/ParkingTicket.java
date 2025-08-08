@@ -1,6 +1,6 @@
-package org.muskan.parkinglot;
+package org.muskan.parkinglot.entities;
 
-import org.muskan.parkinglot.parkingspot.ParkingSpot;
+import org.muskan.parkinglot.entities.ParkingSpot;
 import org.muskan.parkinglot.vehicle.Vehicle;
 
 import java.util.Date;
@@ -41,7 +41,7 @@ public class ParkingTicket {
         this.ticketId= UUID.randomUUID().toString();
     }
 
-    public void setExitTimeStamp(long exitTimeStamp) {
-        this.exitTimeStamp = exitTimeStamp;
+    public void setExitTimeStamp() {
+        this.exitTimeStamp = new Date().getTime();
     }
 }

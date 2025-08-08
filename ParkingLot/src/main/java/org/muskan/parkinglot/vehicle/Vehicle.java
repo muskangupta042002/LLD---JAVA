@@ -1,18 +1,18 @@
 package org.muskan.parkinglot.vehicle;
 
 public abstract class Vehicle {
-    String licensePlate;
-    VehicleType type;
+    private final String licensePlate;
+    private final VehicleSize size;
 
-    public Vehicle(String licensePlate, VehicleType type){
+    public Vehicle(String licensePlate, VehicleSize size){
         this.licensePlate=licensePlate;
-        this.type=type;
+        this.size=size;
     }
 
     public String getLicensePlate(){
         return licensePlate;
     }
-    public VehicleType getType(){
-        return type;
+    public VehicleSize getSize(){
+        return size;
     }
 }
