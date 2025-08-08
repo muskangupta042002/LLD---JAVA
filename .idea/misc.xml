@@ -18,6 +18,9 @@
         <option value="$PROJECT_DIR$/LoggingFrameworkDesign/pom.xml" />
         <option value="$PROJECT_DIR$/ChainOfResponsibility/pom.xml" />
         <option value="$PROJECT_DIR$/MovieTicketBooking/pom.xml" />
+        <option value="$PROJECT_DIR$/BuilderPattern/pom.xml" />
+        <option value="$PROJECT_DIR$/factory-part2/pom.xml" />
+        <option value="$PROJECT_DIR$/ParkingLot/pom.xml" />
       </list>
     </option>
   </component>

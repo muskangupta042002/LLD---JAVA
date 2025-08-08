@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/AdapterPattern/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AdapterPattern/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BuilderPattern/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BuilderPattern/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CarRentalSystem/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CarRentalSystem/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ChainOfResponsibility/src/main/java" charset="UTF-8" />
@@ -22,11 +24,15 @@
     <file url="file://$PROJECT_DIR$/MovieTicketBooking/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ObserverPattern/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ObserverPattern/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ParkingLot/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ParkingLot/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Singleton/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Singleton/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/StrategyPattern/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/StrategyPattern/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/TemplateMethodPattern/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/TemplateMethodPattern/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/factory-part2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/factory-part2/src/main/resources" charset="UTF-8" />
   </component>
 </project>

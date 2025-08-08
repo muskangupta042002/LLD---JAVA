@@ -16,10 +16,13 @@
         <module name="CommandPatttern" />
         <module name="CarRentalSystem" />
         <module name="StrategyPattern" />
+        <module name="ParkingLot" />
         <module name="Singleton" />
         <module name="TemplateMethodPattern" />
         <module name="AdapterPattern" />
+        <module name="BuilderPattern" />
         <module name="ChainOfResponsibility" />
+        <module name="factory-part2" />
       </profile>
     </annotationProcessing>
   </component>

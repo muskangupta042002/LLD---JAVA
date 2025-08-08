@@ -1,0 +1,218 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "org.muskan.api.TheatreController",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1062805971 { 
+   	label=muskan
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1957933096 { 
+   	label=model
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   Screen40861426[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Screen</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   id: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   seat: List&lt;Seat&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   theatre: Theatre [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addSeat(seat: Seat)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Seat40861426[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Seat</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   id: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   rowNo: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   seatNo: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># canEqual(other: Object): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Theatre40861426[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Theatre</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   id: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   screens: List&lt;Screen&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addScreen(screen: Screen)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_832358143 { 
+   	label=services
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   TheatreService469627915[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TheatreService</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   screens: Map&lt;String, Screen&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   seats: Map&lt;String, Seat&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   theatres: Map&lt;String, Theatre&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createScreen(screenName: String, theatre: Theatre): Screen</TD></TR>
+<TR><TD ALIGN="LEFT" >+ createScreenInTheatre(screenName: String, theatre: Theatre): Screen</TD></TR>
+<TR><TD ALIGN="LEFT" >+ createSeatInScreen(rowNo: Integer, seatNo: Integer, screen: Screen): Seat</TD></TR>
+<TR><TD ALIGN="LEFT" >+ createTheatre(theatreName: String): Theatre</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getScreen(screenId: String): Screen</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getSeat(seatId: String): Seat</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getTheatre(theatreId: String): Theatre</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_949510873 { 
+   	label=api
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   TheatreController934108195[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TheatreController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   theatreService: TheatreService [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createScreenInTheatre(screenName: String, theatreId: String): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ createSeatInScreen(rowNo: Integer, seatNo: Integer, screenId: String): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ createTheatre(theatreName: String): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+Screen40861426 -> Seat40861426[label="seat
+[0..*]"];
+Screen40861426 -> Theatre40861426[label="theatre
+[0..1]"];
+Theatre40861426 -> Screen40861426[label="screens
+[0..*]"];
+TheatreController934108195 -> TheatreService469627915[label="theatreService
+[0..1]"];
+TheatreService469627915 -> Screen40861426[label="screens
+[0..*]"];
+TheatreService469627915 -> Seat40861426[label="seats
+[0..*]"];
+TheatreService469627915 -> Theatre40861426[label="theatres
+[0..*]"];
+    
+}
+@enduml
